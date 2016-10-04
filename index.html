@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Monolith to Reactive - it's all about architecture</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal" id="presentation">
+			<div class="slides">
+
+<section>
+    <h2>Lagom overview</h2>
+
+    <p style="margin-top: 100px; font-weight: bold;">James Roper</p>
+
+    <p><tt>@jroper</tt></p>
+
+    <img style="width: 30%; margin-top: 50px; border: none; background: none; box-shadow: none;" src="assets/lightbend-logo.svg"/>
+</section>
+
+<section>    
+    <p><b>Lagom</b> - <i>enough, sufficient, adequate, just right</i></p>
+    
+    <ul>
+        <li class="fragment">Microservices framework for the JVM</li>
+        <li class="fragment">Provides Java and (soon) Scala API</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Overall theme</h2>
+
+    <p><i>Guidance</i></p>
+</section>
+
+<section>
+<section>
+    <h2>Sub-themes</h2>
+
+    <ul>
+        <li class="fragment">Communication</li>
+        <li class="fragment">Persistence</li>
+        <li class="fragment">Development</li>
+        <li class="fragment">Production</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Communication</h2>
+
+    <ul>
+        <li class="fragment">Type-safe service API</li>
+        <li class="fragment">Synchronous message passing using REST</li>
+        <li class="fragment">Asynchronous message passing using Kafka</li>
+        <li class="fragment">Location transparency</li>
+        <li class="fragment">Resilience</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Persistence</h2>
+
+    <ul>
+        <li class="fragment">Domain Driven Design</li>
+        <li class="fragment">Event sourcing and CQRS</li>
+        <li class="fragment">In-built sharding across a cluster</li>
+        <li class="fragment">Cassandra, relational databases and more</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Development</h2>
+
+    <ul>
+        <li class="fragment">Run all services with one command</li>
+        <li class="fragment">Hot reloads on code change</li>
+        <li class="fragment">Manages Cassandra, Kafka and service locator</li>
+        <li class="fragment">Use sbt or maven</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Production</h2>
+
+    <ul>
+        <li class="fragment">Service orchestration using ConductR</li>
+        <li class="fragment">Scale up and down nodes for a service</li>
+        <li class="fragment">Automatic cluster management</li>
+        <li class="fragment">Locate services through ConductR</li>
+    </ul>
+</section>
+</section>
+
+<section>
+    <h2>Get aquainted</h2>
+
+    <p><a href="http://lagomframework.com">http://lagomframework.com</a></p>
+</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+            var sections = document.getElementsByTagName('section');
+			for (var i = 0; i < sections.length; i++) {
+                var slide = sections[i];
+  				if (!(slide.getAttribute('data-background') ||
+        				slide.getAttribute('data-background-video') ||
+        				slide.getAttribute('data-background-iframe'))) {
+    				slide.setAttribute('data-background', 'assets/lagom-hero.png');
+  				}
+			}
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				],
+
+                keyboard: {
+                    86: "togglePause"
+                }
+			});
+		</script>
+	</body>
+</html>
